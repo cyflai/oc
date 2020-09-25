@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ldap-ext-test
+spec:
+  ports:
+    - name: ldap
+      port: 6389
+      protocol: TCP
+      targetPort: 6389
+    - name: ldaps
+      port: 6636
+      protocol: TCP
+      targetPort: 6636
+  type: ClusterIP
+  selector:
+    app: ldaptea
